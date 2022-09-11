@@ -1,38 +1,709 @@
-.App {
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.App{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 5px;
+  background-color: transparent;
+} 
+
+::-webkit-scrollbar-thumb{
+  width: .5rem;
+  height: .5rem;
+  background-color: black;
+  border-radius: 5px;
+} 
+
+/*Navbar*/
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo{
+  width: clamp(2.5em, 10vw, 3.5em);
+  aspect-ratio: 1;
+  margin: 1.75em 0 2em 5em ;
+  cursor: pointer;
+}
+
+.title{
+  margin: .25em 1em 0 .5em;
+  font-size: clamp(2em, 5vw, 2.5em);
+  font-family: 'Bebas Neue';
+  cursor: pointer;
+}
+
+.navbar{
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  column-gap: 1.5em;
+  padding: 0 3.5rem;
+  font-family: 'Lora', serif;
+}
+
+.nav-header{
+  display: none;
+}
+
+.mobile-nav-toggle{
+  display: none;
+}
+
+.navbar li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+
+
+.button{
+  width: 5rem;
+  aspect-ratio: 2;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+  cursor: pointer;
+}
+
+.signup{
+  display: none;
+}
+
+/*Top Cover*/
+.top-cover{
+  position: relative;
+  background-color: rgba(176, 214, 231, 0.29);
+}
+
+.top-cover-content{
+  width: 80%;
+  margin: 0 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headline-tagline{
+  padding: 2.5rem 0;
+  margin: 0 0 2.5rem 1rem;
+  display: grid;
+  width: 37.5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headline{
+  font-size: 3.75rem;
+  font-family: 'Bebas Neue';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tagline{
+  padding: 1.5rem 3.5rem;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tagline-mobile{
+  display: none;
+}
+
+.top-cover-house{
+  width: 17.5rem;
+  aspect-ratio: .731;
+  margin-bottom: 7.5rem;
+}
+
+.top-cover-info{
+  width: 100%;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-cover-info-mobile{
+  display: none;
+}
+
+.info-number{
+  font-size: 2rem;
+  font-family: 'Bebas Neue';
+}
+
+.info-text{
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.search-bar{
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 100;
+  bottom: 2.5rem;
+  width: 40rem;
+  margin: 0 auto;
+  background-color: white;
+  height: 5rem;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+.search-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  cursor: pointer;
+}
+
+.info-logo{
+  width: 1rem;
+  aspect-ratio: 1;
+}
+
+.search-info-text{
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+}
+
+.search-info-header{
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.search-button{
+  position: relative;
+  background-image: url('../src/assets/search.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  background-size:auto;
+  padding: 0 2.5rem;
+  border: 0;
+  left: 3.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*Mid Section*/
+.mid-section{
+  width: 87.5%;
+  margin: 3.5rem auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.mid-section-header{
+  font-size: 3.5rem;
+  font-family: 'Bebas Neue';
+}
+
+.image-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-list{
+  width: 40rem;
+  cursor: pointer;
+}
+
+.description-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 37.5rem;
+}
+
+.description-1, .description-2, .description-3{
+  margin: 2.5rem auto;
+  padding: 0 2.5rem;
+}
+
+.description-header{
+  font-size: 2rem;
+  font-family: 'Bebas Neue';
+  display: flex;
+  align-items: center;
+}
+
+.description-content{
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info-button{
+  width: 1.85rem;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 5px;
+  background-image:url('../src/assets/info.png') ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.popular{
+  width: 100%;
+}
+
+.popular-header{
+  font-size: 3.5rem;
+  font-family: 'Bebas Neue';
+}
+
+.popular-residences{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popular-card{
+  width:clamp(15rem,10vw,10rem);
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5);
+}
+
+.popular-img{
+  width:clamp(15rem,10vw,10rem);
+  aspect-ratio: 1;
+}
+
+.popular-details{
+  padding: 1rem 1rem;
+}
+
+.house-price{
+  font-size: 1.5em;
+  font-family: 'Bebas Neue';
+}
+
+.house-name{
+  font-size: 1.75em;
+  font-family: 'Bebas Neue';
+}
+
+.house-description{
+  font-family: 'Lora', serif;
+}
+
+.view{
+  margin: 0 0 2rem 0;
+}
+
+/*Bottom Section*/
+.bottom-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-reviews{
+  font-size: 3.5rem;
+  font-family: 'Bebas Neue';
+  text-align: center;
+}
+
+.reviews{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.review-card{
+  padding: 0 10rem;
+}
+
+.author{
+  font-size: 1.75rem;
+  font-family: 'Bebas Neue';
+}
+
+.author-img{
+  width: 6.5rem;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+}
+
+.content{
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bottom-cover{
+  margin: 5rem 0 0 0;
+  width: 100%;
+  background-color: rgba(176, 214, 231, 0.29);
+}
+
+.bottom-cover-content{
+  width: 80%;
+  margin: 2.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content-text{
+  width: 40rem;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.bottom-cover-header{
+  font-size: 3.75rem;
+  font-family: 'Bebas Neue';
+}
+
+.explore{
+  width: 6.5rem;
+  font-size: 1.15rem;
+}
+
+.explore-button{
+  display: none;
+}
+
+.content-image{
+  width: 17.5rem;
+  aspect-ratio: auto;
+}
+
+/*Footer*/
+.footer{
+  width: 100%;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-details{
+  width: 80%;
+  margin: 2.5rem auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-name{
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo{
+  width: clamp(2.5em, 10vw, 3.5em);
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.footer-title{
+  font-size: clamp(2em, 5vw, 2.5em);
+  margin: 1rem 0 0 0;
+  font-family: 'Bebas Neue';
+  cursor: pointer;
+}
+
+.address{
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.socials{
+  width: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-logo{
+  width: clamp(1em, 10vw, 1.5em);
+  aspect-ratio: 1;
+}
+
+.service-company{
+  display: flex;
+  align-items: center;
+  column-gap: 7.5rem;
+}
+
+.services-section, .company-section{
+  text-align: center;
+}
+
+.services,.company{
+  font-size: clamp(1.25em, 5vw, 1.75em);
+  font-family: 'Bebas Neue';
+}
+
+
+@media(max-width:750px){
+  /*Navbar*/
+  .logo{
+    margin: 1.75em 0 2em 3em ;
+    width: clamp(3em, 10vw, 4em);
   }
-  to {
-    transform: rotate(360deg);
+
+  .title{
+    font-size: clamp(2.5em, 5vw, 3em);
+  }
+
+  .navbar{
+    position: fixed;
+    padding: 10em 0;
+    inset: 0 0 0 0;
+    background-color: hsl(0, 0%, 0%, .9);
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: clamp(1em, 5vw, 1.25em);
+    font-weight: 500;
+    transform: translateX(100%);
+    transition: 350ms ease-in-out;
+    z-index: 9990;
+    min-height: 100vh;
+  }
+
+  .navbar[data-visible="true"]{
+    transform: translateX(0%);
+  }
+
+  .navbar li{
+    position: relative;
+    color: white;
+  }
+
+  .signup{
+    display: block;
+  }
+
+  .button{
+    display: none;
+  }
+
+  .nav-header{
+    display: grid;
+    position: relative;
+    color: white;
+    row-gap: 1em;
+  }
+
+  .browse{
+    font-family: 'Lora', serif;
+    font-weight: bolder;
+    font-size: clamp(1.5em, 10vw, 1.75em);
+  }
+
+  .estateistic{
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(1.25em, 10vw, 1.5em);
+    font-weight: 500;
+  }
+
+  .mobile-nav-toggle{
+    display: block;
+    align-items: center;
+    position: absolute;
+    background-image: url('/src/assets/menu.png');
+    background-color: transparent;
+    color: white;
+    background-size: cover;
+    right: 2rem;
+    width: clamp(2em, 5vw, 2.5em);
+    border: none;
+    aspect-ratio: 1;
+    z-index: 9999;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"]{
+    position: fixed;
+    background-image: url('/src/assets/cross.png');
+  }
+
+  /*Top Cover*/
+  .top-cover-content{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .headline-tagline{
+    width: 75%;
+  }
+
+  .top-cover-house{
+    margin-bottom: 2.5rem;
+  }
+
+  .tagline{
+    display: none;
+  }
+
+  .tagline-mobile{
+    text-align: center;
+    display: block;
+    padding: 0rem 3.5rem;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .top-cover-info{
+    display: none;
+  }
+
+  .top-cover-info-mobile{
+    width: 100%;
+    padding: 2.5rem 0;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .search-bar{
+    width: 100%;
+    left: 0;
+  }
+
+  .info-logo{
+    width: 1rem;
+  }
+
+  .search-info-text{
+    font-size: 1rem;
+  }
+  
+  .search-info-header{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .search-button{
+    left: .75rem;
+  }
+
+  /*Mid Section*/
+  .mid-section{
+    width: 100%;
+    margin: 1rem auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mid-section-tagline{
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .image-section{
+    flex-direction: column;
+  }
+
+  .image-list{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .description-1{
+    margin: 2.5rem auto 0 auto;
+  }
+
+  .description-2, .description-3{
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .popular-header{
+    text-align: center;
+  }
+
+  .popular-residences{
+    flex-direction: column;
+  }
+  
+  /*Bottom Section*/
+
+  .user-reviews{
+    margin: 1rem 0 2.5rem 0;
+  }
+  .review-card{
+    padding: 0 3.5rem;
+  }
+
+  .bottom-cover{
+    margin:0;
+  }
+
+  .bottom-cover-content{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .content-text{
+    width: 100%;
+    text-align: center;
+  }
+
+  .explore-button{
+    display: block;
+    width: 6.5rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    margin: 3.5rem 0 1rem 0;
+  }
+
+  /*Footer*/
+  .footer-details{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3.5rem;
   }
 }
